@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { goto } from '$app/navigation'; // ✅ Adicionado para redirecionamento programático
+  import { goto } from '$app/navigation';
 
   onMount(async () => {
     const mobileBtn = document.getElementById('mobile_btn');
