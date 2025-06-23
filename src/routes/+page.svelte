@@ -8,7 +8,7 @@
 
     if (mobileBtn && mobileMenu) {
       mobileBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('active');
+        mobileMenu.classList.toggle('active'); 
         const icon = mobileBtn.querySelector('i');
         if (icon) icon.classList.toggle('fa-x');
       });
