@@ -30,12 +30,13 @@
 <div class="border px-16 py-5">
 	<div>
 		<div class="flex w-full gap-3">
-			<div class="w-8/12">
+			<div class="w-10/12">
 				<input type="text" placeholder="Pesquisar um produto" class="input input-bordered w-full" bind:value={search}
 					oninput={changeUrl}/>
 			</div>
-			<div class="flex w-6/12 gap-3">
-			</div>
+			<!-- <div class="w-2/12">
+        <a class="btn btn-success w-full" href="/home/produto/novo"> Novo </a>
+			</div> -->
 		</div>
 	</div>
 </div>
@@ -59,12 +60,18 @@
 					<td>{pro.quantidadeEstoque}</td>
 					<td>{pro.unidadeDeMedida}</td>
 					<td class="text-center">
-						<details class="dropdown dropdown-end dropdown-bottom">
+						<!-- <details class="dropdown dropdown-end dropdown-bottom">
 							<summary class="btn m-1">...</summary>
 							<ul class="menu dropdown-content z-50 w-52 rounded-box bg-base-100 p-2 shadow-sm">
-								
+                <li>
+                  Não deu tempo de implementar
+                </li>
+								<li>
+									<a href="/home/produto/editar/{pro.id}" class="btn btn-secondary mt-2">Editar</a>
+								</li>
+								<li><button class="btn btn-warning mt-2">Remover</button></li>
 							</ul>
-						</details>
+						</details> -->
 					</td>
 				</tr>
 			{/each}
@@ -72,10 +79,10 @@
 	</table>
 </div>
 
-<div class="w-full flex justify-center mb-5">
+<!-- <div class="w-full flex justify-center mb-5">
   <div class="join">
     {#each Array(nPages) ?? [1] as n, index}
       <button class="join-item btn {page === index + 1 ? 'btn-active' : ''}" onclick={() => {page = index + 1; changeUrl()}}>{index + 1}</button>
     {/each}
   </div>
-</div>
+</div> -->

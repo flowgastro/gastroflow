@@ -8,18 +8,19 @@ import { goto } from '$app/navigation';
 export const load = (async ({params}) => {
   let idUser = 1;
   let getFornecedorById = await fornecedorQueries.getFornecedorById(parseInt(params.id), idUser);
-  const insumos = await insumoQueries.getAllInsumoFromFornecedor(
+  const insumos = await insumoQueries.getInsumosByFornecedorId(
     idUser, parseInt(params.id)
   );
 
   return {
     fornecedor : getFornecedorById.fornecedor,
-    insumos : insumos.allInsumosFromFornecedor
+    insumos : insumos ?? []
   };
 }) satisfies PageServerLoad;
 
 export const actions = {
-  editarfornecedor: async ({ request, url }) => {
+  editarfornecedor: async ({ request, url }) => 
+    {
       const data = await request.formData();
   
       const id = data.get('id')?.toString();
@@ -30,6 +31,7 @@ export const actions = {
       const status = data.get('status')?.toString();
   
       const errors: any = {};
+
       if (!name) {
         errors.name = { invalid: true };
       }
@@ -62,7 +64,7 @@ export const actions = {
       try {
       const newId = await fornecedorQueries.updateFornecedor({
         name: name ?? "",
-        idUser: idUser ? parseInt(idUser) : 0,
+        idUser: idUser ? parseInt(idUser) : 1,
         status: status ?? "",
         telefone: telefone ?? "",
         contato: telefone ?? "",

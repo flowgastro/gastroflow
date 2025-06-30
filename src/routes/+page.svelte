@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { goto } from '$app/navigation';
+  import { goto } from '$app/navigation'; // ✅ Adicionado para redirecionamento programático
 
   onMount(async () => {
     const mobileBtn = document.getElementById('mobile_btn');
@@ -8,7 +8,7 @@
 
     if (mobileBtn && mobileMenu) {
       mobileBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('active'); 
+        mobileMenu.classList.toggle('active');
         const icon = mobileBtn.querySelector('i');
         if (icon) icon.classList.toggle('fa-x');
       });

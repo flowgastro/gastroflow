@@ -8,7 +8,7 @@
     <li><a href="/home">Home</a></li>
     <li><a href="/home/fornecedor">Fornecedor</a></li>
     <li>Novo</li>
-  </ul>
+  </ul> 
 </div>
 
 <form method="POST" action="?/novofornecedor">
@@ -16,7 +16,7 @@
     idUser={1} 
     viewOnly={false}
     form={null}
-    insumos={null}
+    insumos={[]}
     fornecedor={null}
     isNew={true}
   />
